@@ -16,18 +16,28 @@
     </style>
 </head>
 <body>
+
+
+    <form type="get" action="decisao.php">
+        <label for="nota1">Nota 1:</label>
+        <input type="number" name="nota1" id="nota1" required><br><br>
+
+        <label for="nota2">Nota 2:</label>
+        <input type="number" name="nota2" id="nota2" required><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+
     <?php
-        $nota1 = 5;
-        $nota2 = 9;
+        $nota1 = $_GET['nota1'];
+        $nota2 = $_GET['nota2'];
+        
+
         $media = ($nota1 + $nota2) / 2;
+        $resultado = ($media > 6) ? "Aprovado" : (($media > 4 && $media < 6) ? "Recuperação" : "Reprovado");
         echo "<h3>A média é: $media</h3>";
-        if ($media >= 6) {
-            echo "<h3>Aprovado!</h3>";
-        } elseif ($media > 4 && $media < 6) {
-            echo "<h3>Recuperação!</h3>";
-        } else {
-            echo "<h3>Reprovado!</h3>";
-        }
+        echo "<h3>Resultado: $resultado</h3>";
 
     ?>
 </body>
