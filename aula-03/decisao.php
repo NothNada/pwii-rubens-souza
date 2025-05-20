@@ -31,7 +31,7 @@
 
     <?php
         if(! isset($_GET['nota1'])){
-            return
+            return;
         }
         $nota1 = $_GET['nota1'];
         $nota2 = $_GET['nota2'];
