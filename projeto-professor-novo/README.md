@@ -206,6 +206,7 @@ create table usuarios(
     id int auto_increment primary key,
     nome varchar(100) not null,
     cpf varchar(15) unique not null,
+    senha varchar(200) not null,
     email varchar(100) unique not null,
     created_data timestamp default current_timestamp
 );
